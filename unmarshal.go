@@ -69,7 +69,7 @@ func unmarshal(obj gjson.Result, v reflect.Value, newByTypeIDer NewByTypeIDer) e
 	switch v.Elem().Kind() {
 	case reflect.Interface:
 		// unwrapping the interface
-		return unmarshal(obj, reflect.ValueOf(v.Interface()), newByTypeIDer)
+		return unmarshal(obj, v.Elem(), newByTypeIDer)
 	case reflect.Pointer:
 		return unmarshal(obj, v.Elem(), newByTypeIDer)
 	case reflect.Map:
