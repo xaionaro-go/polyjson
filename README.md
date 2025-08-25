@@ -23,7 +23,8 @@ For example:
 		panic(err)
 	}
 
-	// / deserialization
+	// deserialize:
+
 	var cpy map[string]any
 	err = polyjson.UnmarshalWithTypeIDs(b, &cpy, polyjson.TypeRegistry())
 	if err != nil {

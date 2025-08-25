@@ -21,7 +21,8 @@ func ExampleUnmarshalWithTypeIDs() {
 	}
 	fmt.Println(string(b))
 
-	// / deserialization
+	// deserialize:
+
 	var cpy map[string]any
 	err = polyjson.UnmarshalWithTypeIDs(b, &cpy, polyjson.TypeRegistry())
 	if err != nil {
